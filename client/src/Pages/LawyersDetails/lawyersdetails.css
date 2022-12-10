@@ -95,7 +95,7 @@
     font-weight: 500;
 }
 
-.lawyersDetailsBooking--text p:nth-child(2) {
+.lawyersDetailsBooking--text p {
     font-size: 1.8rem;
     font-weight: 500;
 }

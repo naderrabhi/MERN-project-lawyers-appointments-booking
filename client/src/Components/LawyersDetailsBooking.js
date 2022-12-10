@@ -20,7 +20,8 @@ const LawyersDetailsBooking = ({avocatID, Profile}) => {
     <div className='lawyersDetailsBooking'>
       <div className="lawyersDetailsBooking--text">
         <p>Faites votre réservation</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+        <p>Lundi au Vendredi : {Profile.mon_fri}</p>
+        <p>Samedi et Dimanche : {Profile.sat_sun}</p>
       </div>
       <div className="lawyersDetailsBooking--book">
         <form onSubmit={handleSave} className='lawyersDetailsBooking--book_form'>

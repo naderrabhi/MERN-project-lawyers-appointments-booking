@@ -12,6 +12,8 @@ const CreateProfile = () => {
   const [facebook, setFacebook] = useState("")
   const [linkedin, setLinkedin] = useState("")
   const [instagram, setInstagram] = useState("")
+  const [mon_fri, setMon] = useState("")
+  const [sat_sun, setSat] = useState("")
 
   const dispatch = useDispatch();
 
@@ -25,6 +27,8 @@ const CreateProfile = () => {
     data.append("facebook", facebook);
     data.append("linkedin", linkedin);
     data.append("instagram", instagram);
+    data.append("mon_fri", mon_fri);
+    data.append("sat_sun", sat_sun);
     dispatch(postProfile(data));
     window.location.reload(false);
   }
@@ -52,6 +56,16 @@ const CreateProfile = () => {
         <div className="form--div">
           <label className='form--label' htmlFor="phone">Téléphone</label>
           <input required id="phone" name="phone" onChange={(e) => setPhone(e.target.value)} placeholder="Téléphone" type="text" className="input--custom"
+          />
+        </div>
+        <div className="form--div">
+          <label className='form--label' htmlFor="mon_fri">Les horaires de travail - lun au ven</label>
+          <input required id="mon_fri" name="mon_fri" onChange={(e) => setMon(e.target.value)} placeholder="Exp : 08:00 - 17:00" type="text" className="input--custom"
+          />
+        </div>
+        <div className="form--div">
+          <label className='form--label' htmlFor="sat_sun">Les horaires de travail - sam et dim</label>
+          <input required id="sat_sun" name="sat_sun" onChange={(e) => setSat(e.target.value)} placeholder="Exp : 08:00 - 12:00" type="text" className="input--custom"
           />
         </div>
         <div className="form--div">

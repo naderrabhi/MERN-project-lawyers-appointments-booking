@@ -12,6 +12,8 @@ const createProfile = async (req, res) => {
   if (req.body.facebook) {obj.facebook = req.body.facebook}
   if (req.body.linkedin) {obj.linkedin = req.body.linkedin}
   if (req.body.instagram) {obj.instagram = req.body.instagram}
+  if (req.body.mon_fri) {obj.mon_fri = req.body.mon_fri}
+  if (req.body.sat_sun) {obj.sat_sun = req.body.sat_sun}
   if (req.file) {obj.image = `${url}/${req.file.path}`}
   
   try {
