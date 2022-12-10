@@ -1,0 +1,30 @@
+.createprofile--page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--font-base);
+    color: var(--color-black);
+}
+
+.createprofile--page::before {
+    content: "";
+    background-image: url('../../assets/images/sign.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+
+.createprofile--page h3 {
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    position: relative;
+    color: var(--color-black);
+}

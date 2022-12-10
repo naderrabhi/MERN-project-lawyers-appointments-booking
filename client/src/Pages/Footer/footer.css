@@ -1,0 +1,38 @@
+.footer--page {
+    min-height: 100vh;
+    background: url('../../assets/images/footer.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    font-family: var(--font-base);
+    color: var(--color-white);
+}
+
+.footer--page h1 {
+    text-transform: capitalize;
+    font-size: 3.5rem;
+}
+
+.footer--page_content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer--page_content h5 {
+    font-size: 2rem;
+}
+
+.footer--page_content p {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .footer--page {
+        align-items: center;
+        text-align: center;
+    }
+}

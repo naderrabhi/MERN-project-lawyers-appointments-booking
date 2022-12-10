@@ -1,0 +1,101 @@
+.websiteexplain--page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.websiteexplain--page_header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.websiteexplain--page_header p {
+    color: var(--color-black);
+    font-size: 2rem;
+    font-weight: bold;
+    width: 25%;
+}
+
+.websiteexplain--page_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.websiteexplain--content_card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10%;
+    width: 360px;
+    height: 460px;
+    padding: 2rem 1rem;
+}
+
+.websiteexplain--card_header {
+    height: 40%;
+    width: 100%;
+}
+
+.websiteexplain--card_header img {
+    width: 100%;
+    height: 100%;
+}
+
+.websiteexplain--card_body {
+    height: auto;
+    width: 100%;
+}
+
+.websiteexplain--card_d {
+    font-family: var(--font-base);
+    font-size: 1.4rem;
+    min-height: 10rem;
+}
+
+.websiteexplain--card_i {
+    color: var(--color-orange);
+    width: 100%;
+    text-align: center;
+    font-size: 6rem;
+    font-family: var(--font-base);
+
+}
+
+@media screen and (max-width:900px) {
+    .websiteexplain--page_header p {
+        width: 50%;
+    }
+    .websiteexplain--page_content {
+        flex-direction: column;
+        gap: 0;
+    }
+    .websiteexplain--content_card {
+        height: auto;
+        gap: 0.8rem;
+        text-align: center;
+    }
+    .websiteexplain--card_i {
+        font-size: 4rem;
+    }
+    .websiteexplain--card_d {
+        min-height: 8rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .websiteexplain--page_header p {
+        width: 100%;
+        text-align: center;
+    }
+    .websiteexplain--page_header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

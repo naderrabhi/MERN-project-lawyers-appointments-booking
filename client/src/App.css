@@ -1,0 +1,104 @@
+.section__padding {
+  padding: 4rem 6rem;
+}
+
+.btn--costum {
+  display: inline-block;
+  border: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-orange);
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  padding: 0 30px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-variant-caps: small-caps;
+}
+
+.btn--costum_hover:hover{
+  transform: scale(1.1);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.login--barre {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  background: var(--color-black);
+  border: solid 1px var(--color-black);
+}
+
+.input--custom {
+  height: 40px;
+  width: 360px;
+  border: solid 3px black;
+  border-radius: 30px;
+  padding: 0 1rem;
+}
+
+.input--custom:focus {
+  outline: solid 1px black;
+}
+
+.form--custom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form--div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form--label {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-variant:small-caps;
+    color: var(--color-black);
+}
+
+.page--relative {
+    opacity: 1;
+    position: relative;
+}
+
+/*Social Icon*/
+
+.lawyer--social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.lawyer--social svg{
+  font-size: 1.8rem;
+}
+
+.lawyer--social svg:hover{
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+p.social--p {
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 850px) {
+  .section__padding {
+      padding: 4rem;
+  }
+}
+  
+@media screen and (max-width: 650px) {
+  .section__padding {
+      padding: 4rem 2rem;
+  }
+}

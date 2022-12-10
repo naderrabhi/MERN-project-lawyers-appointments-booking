@@ -1,0 +1,140 @@
+.profileLawyer--page {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--font-base);
+}
+
+.profileLawyer--page::before {
+    content: "";
+    background-image: url('../../assets/images/footer.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+
+.profileLawyerInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    opacity: 1;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.profileLawyerInfo--img {
+    background-color: var(--color-white);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.profileLawyerInfo--img img {
+    width: 250px;
+}
+
+.profileLawyerInfo--details {
+    background-color: var(--color-orange);
+    width: 50%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.profileLawyerInfo--details p {
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.profileLawyerInfo--social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profileLawyerAppointment {
+    background-color: white;
+    width: 100%;
+    padding: 2rem 4rem;
+}
+
+.profileLawyerAppointment--app {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profileLawyerAppointment--app_confirm {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profileLawyerAppointment--app p {
+    font-family: var(--font-base);
+    font-size: 1.8rem;
+    color: var(--color-black);
+}
+
+.profileLawyerAppointment--app svg {
+    color: green;
+    font-size: 35px;
+}
+
+.profileLawyerAppointment--app span {
+    color: var(--color-orange);
+}
+
+.profileLawyerAppointment--app ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: var(--font-base);
+    font-size: 1.4rem;
+    color: var(--color-black);
+}
+
+.profileLawyerAppointment--app_btn {
+    display: flex;
+    gap: 1rem;
+}
+
+.profileLawyerAppointment--app_btn button {
+    font-size: 17px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+}
+
+@media screen and (max-width: 1150px) {
+    .profileLawyerInfo {
+        flex-direction: column;
+        align-items:center;
+        gap: 2rem;
+    }
+    .profileLawyerInfo--img,
+    .profileLawyerInfo--details {
+        width: 100%;
+    }
+}

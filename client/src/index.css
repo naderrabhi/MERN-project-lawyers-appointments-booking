@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Changa:wght@400;500&family=Lato&family=Rakkas&family=Roboto:wght@300&family=Ubuntu&family=Yrsa&display=swap');:root {
+  --font-base: 'Yrsa', serif;
+  
+  --color-white: #FFFFFF;
+  --color-orange: #E14D2A;
+  --color-gray: #afafaf;
+  --color-brown: #70412d;
+  --color-black: #0C0C0C;
+  --color-bgblack: #292930;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}

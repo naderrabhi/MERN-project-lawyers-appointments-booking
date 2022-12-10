@@ -1,0 +1,168 @@
+.lawyerDetails--page {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    font-family: var(--font-base);
+}
+
+.lawyerDetails--page::before {
+    content: "";
+    background-image: url('../../assets/images/footer.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+
+.lawyerDetailsInfo,
+.lawyersDetailsBooking {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    opacity: 1;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.lawyerDetailsInfo--img {
+    background-color: var(--color-white);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.lawyerDetailsInfo--img img {
+    width: 250px;
+}
+
+.lawyerDetailsInfo--img p:nth-child(2) {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.lawyerDetailsInfo--img p:nth-child(3) {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.lawyerDetailsInfo--bio {
+    background-color: var(--color-orange);
+    width: 50%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.lawyerDetailsInfo--bio p {
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.lawyersDetailsBooking--text {
+    background-color: var(--color-orange);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.lawyersDetailsBooking--text p:nth-child(1) {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.lawyersDetailsBooking--text p:nth-child(2) {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.lawyersDetailsBooking--book {
+    background-color: var(--color-white);
+    width: 50%;
+    padding: 2rem 4rem;
+}
+
+.lawyersDetailsBooking--book_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.lawyersDetailsBooking--book_form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.lawyersDetailsBooking--book_form label {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-variant:small-caps;
+    color: var(--color-black);
+}
+
+.lawyersDetailsBooking--book_subject textarea {
+    height: 100px !important;
+    padding-top: 0.5rem !important;
+}
+
+@media screen and (max-width:1150px) {
+    .lawyerDetailsInfo,
+    .lawyersDetailsBooking {
+        flex-direction: column;
+        align-items: center;
+    }
+    .lawyerDetails--page {
+        gap: 2rem;
+    }
+    .lawyerDetailsInfo--bio,
+    .lawyerDetailsInfo--img,
+    .lawyersDetailsBooking--book,
+    .lawyersDetailsBooking--text{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .lawyerDetailsInfo--img img {
+        width: 320px;
+    }
+    .lawyerDetailsInfo--img,
+    .lawyerDetailsInfo--bio,
+    .lawyersDetailsBooking--text{
+        padding: 2rem 0.5rem;
+    }
+    .lawyersDetailsBooking--book_form input,
+    .lawyersDetailsBooking--book_form textarea {
+        width: 300px !important;
+    }
+    .lawyersDetailsBooking--book_form button {
+        width: 270px !important;
+    }
+}
