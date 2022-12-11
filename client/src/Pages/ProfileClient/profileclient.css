@@ -1,0 +1,83 @@
+.profileClient--page {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    font-family: var(--font-base);
+}
+
+.profileClient--page::before {
+    content: "";
+    background-image: url('../../assets/images/footer.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+
+.profileClientInfo,
+.profileClientAppoinment {
+    opacity: 1;
+    position: relative;
+    height: 500px;
+}
+
+.profileClientInfo {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.profileClientInfo p,
+.profileClientAppoinment p,
+.profileClientAppoinment ul {
+    font-family: var(--font-base);
+    font-size: 1.6rem;
+}
+
+.profileClientAppoinment span {
+    color: var(--color-orange);
+}
+
+.profileClientAppoinment--confirm {
+    display: flex;
+    gap: 1rem;
+}
+
+.profileClientAppoinment--confirm svg {
+    color: green;
+    font-size: 65px;
+}
+
+.profileClientAppoinment button {
+    font-size: 17px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+}
+
+.profileClientAppoinment {
+    background-color: var(--color-white);
+    width: 50%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    color: var(--color-black);
+}

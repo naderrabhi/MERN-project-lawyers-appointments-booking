@@ -32,6 +32,7 @@ export const createAppointment = (avocatID, newAppointment) => async (dispatch) 
     );
     dispatch({ type: POST_APPOINTMENT_SUCCESS, payload: response.data });
     dispatch(setAlert(response.data.msg, "success"));
+    dispatch(getAllAppointment());
   } catch (error) {
     const { errors, msg } = error.response.data;
     console.log(errors);

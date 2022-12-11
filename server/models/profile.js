@@ -11,6 +11,7 @@ const profileSchema = new mongoose.Schema({
   phone: { type: String, required: true},
   mon_fri : { type: String, required: true},
   sat_sun: { type: String, required: true},
+  price: String,
   facebook: String,
   linkedin: String,
   instagram: String,

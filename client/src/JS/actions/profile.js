@@ -1,7 +1,7 @@
 import API from '../../Api/API';
 import {POST_PROFILE_FAIL, POST_PROFILE_SUCCESS , GET_PROFILES_FAIL, GET_PROFILES_LOADING, GET_PROFILES_SUCCESS, GET_ONE_PROFILE_LOADING, GET_ONE_PROFILE_SUCCESS, GET_ONE_PROFILE_FAIL, GET_My_PROFILE_SUCCESS, GET_My_PROFILE_FAIL, GET_My_PROFILE_LOADING, DEL_PROFILE_SUCCESS, DEL_PROFILE_FAIL} from "../const/profile.js";
 
-export const postProfile = (profile) => async (dispatch) => {
+export const postProfile = (profile,avocatID) => async (dispatch) => {
   const token = localStorage.getItem("token");
   try {
     const response = await API.put(
@@ -14,6 +14,9 @@ export const postProfile = (profile) => async (dispatch) => {
       }
     );
     dispatch({type : POST_PROFILE_SUCCESS, payload: response.data})
+    dispatch(getAllProfiles())
+    dispatch(getMyProfile())
+    dispatch(getOneProfile(avocatID))
   } catch (error) {
     dispatch({ type: POST_PROFILE_FAIL, payload: error });
     console.log(error);

@@ -16,6 +16,7 @@ import Private from './Private/Private';
 import { getCurrentUser } from './JS/actions/auth';
 
 import './App.css';
+import LawyersEdit from './Pages/LawyersEdit/LawyersEdit';
 
 function App() {
   const [serchInput, setSerchInput] = useState("tout")
@@ -36,6 +37,7 @@ function App() {
         
         <Route path='/avocats' element={<Lawyers setSerchInput={setSerchInput} serchInput={serchInput} />} />
         <Route path='/avocats/:avocatID' element={<LawyersDetails />} />
+        <Route path='/avocats/editer/:avocatID' element={<LawyersEdit />} />
 
         <Route path='/profile' element={<Private />} />
         <Route path='/tableau-de-bord' element={<PrivateAdmin><DashboardAdmin /></PrivateAdmin>} />

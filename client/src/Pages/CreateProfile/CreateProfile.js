@@ -1,10 +1,12 @@
 import React, {useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import {postProfile} from '../../JS/actions/profile'
 
 import './createprofile.css'
 
 const CreateProfile = () => {
+  const User = useSelector(state => state.auth.User)
   const [image, setImage] = useState("")
   const [address, setAddress] = useState("")
   const [bio, setBio] = useState("")
@@ -14,8 +16,10 @@ const CreateProfile = () => {
   const [instagram, setInstagram] = useState("")
   const [mon_fri, setMon] = useState("")
   const [sat_sun, setSat] = useState("")
+  const [price, setPrice] = useState("")
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -29,8 +33,9 @@ const CreateProfile = () => {
     data.append("instagram", instagram);
     data.append("mon_fri", mon_fri);
     data.append("sat_sun", sat_sun);
-    dispatch(postProfile(data));
-    window.location.reload(false);
+    data.append("price", price);
+    dispatch(postProfile(data,User._id));
+    navigate('/')
   }
   
   return (
@@ -50,7 +55,7 @@ const CreateProfile = () => {
         </div>
         <div className="form--div">
           <label className='form--label' htmlFor="bio">Bio</label>
-          <input required id="bio" name="bio" onChange={(e) => setBio(e.target.value)} placeholder="Bio" type="text" className="input--custom"
+          <textarea required id="bio" name="bio" cols="30" rows="10" onChange={(e) => setBio(e.target.value)} placeholder="Bio" type="text" className="input--custom"
           />
         </div>
         <div className="form--div">
@@ -66,6 +71,11 @@ const CreateProfile = () => {
         <div className="form--div">
           <label className='form--label' htmlFor="sat_sun">Les horaires de travail - sam et dim</label>
           <input required id="sat_sun" name="sat_sun" onChange={(e) => setSat(e.target.value)} placeholder="Exp : 08:00 - 12:00" type="text" className="input--custom"
+          />
+        </div>
+        <div className="form--div">
+          <label className='form--label' htmlFor="price">Prix de consultation</label>
+          <input required id="price" name="price" onChange={(e) => setPrice(e.target.value)} placeholder="00 Euro" type="text" className="input--custom"
           />
         </div>
         <div className="form--div">

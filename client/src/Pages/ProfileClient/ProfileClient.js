@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import ProfileClientInfo from '../../Components/ProfileClientInfo'
+import ProfileClientAppoinment from '../../Components/ProfileClientAppoinment'
+import {getAllAppointment} from '../../JS/actions/appointment'
 
 import './profileclient.css'
 
 const ProfileClient = () => {
+  const User = useSelector((state) => state.auth.User)
+  const Appointments = useSelector((state) => state.appointment.Appointments);
+
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(getAllAppointment());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div>ProfileClient</div>
+    <div className='profileClient--page section__padding'>
+      <ProfileClientInfo User={User} />
+      {Appointments.map(appointment => <ProfileClientAppoinment key={appointment._id} appointment={appointment} />)}
+    </div>
   )
 }
 

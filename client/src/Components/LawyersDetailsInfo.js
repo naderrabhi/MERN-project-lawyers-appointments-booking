@@ -10,10 +10,11 @@ const LawyersDetailsInfo = ({Profile}) => {
             <p>{Profile.specialty}</p>
         </div>
         <div className='lawyerDetailsInfo--bio'>
-          {Profile.bio && <p>{Profile.bio}</p>}
-          {Profile.address && <p>{Profile.address}</p>}
-          {Profile.lawyerID && <p>{Profile.lawyerID.email}</p>}
-          {Profile.phone && <p>{Profile.phone}</p>}
+          {Profile.bio && <p>Bio : {Profile.bio}</p>}
+          {Profile.address && <p>Adresse : {Profile.address}</p>}
+          {Profile.lawyerID && <p>E-mail : {Profile.lawyerID.email}</p>}
+          {Profile.phone && <p>Téléphone : {Profile.phone}</p>}
+          {Profile.price && <p>Prix de consultation : {Profile.price}</p>}
             <div className="lawyer--social">
               {Profile.facebook && <a href={Profile.facebook}><FaFacebook /></a> }
               {Profile.linkedin && <a href={Profile.linkedin}><FaTwitterSquare /></a> }

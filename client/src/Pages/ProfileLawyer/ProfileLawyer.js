@@ -10,6 +10,7 @@ import './profilelawyer.css'
 const ProfileLawyer = () => {
   const Profile = useSelector((state) => state.profile.Profile);
   const Appointments = useSelector((state) => state.appointment.Appointments);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {

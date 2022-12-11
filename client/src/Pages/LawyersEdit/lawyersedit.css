@@ -1,4 +1,4 @@
-.createprofile--page {
+.editprofile--page {
     position: relative;
     min-height: 100vh;
     width: 100%;
@@ -10,7 +10,7 @@
     color: var(--color-black);
 }
 
-.createprofile--page::before {
+.editprofile--page::before {
     content: "";
     background-image: url('../../assets/images/sign.jpeg');
     background-size: cover;
@@ -22,14 +22,14 @@
     opacity: 0.4;
 }
 
-.createprofile--page h3 {
+.editprofile--page h3 {
     font-size: 3rem;
     letter-spacing: 0.2rem;
     position: relative;
     color: var(--color-black);
 }
 
-.createprofile--page textarea {
+.editprofile--page textarea {
     height: 100px !important;
     padding-top: 0.5rem !important;
 }

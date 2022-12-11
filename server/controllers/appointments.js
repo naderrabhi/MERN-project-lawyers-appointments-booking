@@ -19,7 +19,6 @@ const createAppointment = async (req, res) => {
       lawyerID: avocatID,
     });
     await newAppointment.save();
-    console.log(newAppointment)
     res.send({ msg: "Rendez-vous pris avec succès", newAppointment });
   } catch (error) {
     res.status(400).send({ msg: error.message });
