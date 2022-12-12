@@ -6,10 +6,13 @@ import {getMyProfile} from '../../JS/actions/profile'
 import {getAllAppointment} from '../../JS/actions/appointment'
 
 import './profilelawyer.css'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const ProfileLawyer = () => {
   const Profile = useSelector((state) => state.profile.Profile);
+  const Loading = useSelector((state) => state.profile.loading);
   const Appointments = useSelector((state) => state.appointment.Appointments);
+  const LoadingAppointments = useSelector((state) => state.appointment.loading);
   
   const dispatch = useDispatch();
 
@@ -25,8 +28,11 @@ const ProfileLawyer = () => {
 
   return (
     <div className='profileLawyer--page section__padding'>
+      {Loading ? <LoadingSpinner /> : <>
       <ProfileLawyerInfo Profile={Profile} />
-      <ProfileLawyerAppointment Appointments={Appointments} />
+      <ProfileLawyerAppointment LoadingAppointments={LoadingAppointments} Appointments={Appointments} />
+      </>}
+      
     </div>
   )
 }

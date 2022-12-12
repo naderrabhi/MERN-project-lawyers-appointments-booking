@@ -1,0 +1,152 @@
+.dash--page {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    font-family: var(--font-base);
+}
+
+.dash--page::before {
+    content: "";
+    background-image: url('../../assets/images/footer.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+
+.dashboardAdminHeader,
+.dashboardAdminList {
+    position: relative;
+    opacity: 1;
+}
+
+.dashboardAdminHeader {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dash--header_search {
+    position: relative;
+}
+
+.dash--header_search button {
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: var(--color-orange);
+    background-color: transparent;
+    
+}
+
+.dash--header_search svg {
+    font-size: 18px;
+}
+
+.dash--header_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dash--header_links button {
+    font-size: 17px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+}
+
+/*Card User*/
+
+.dashboardAdminList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.user--card {
+    position: relative;
+    width: 240px;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    min-height: 100%;
+    height: auto;
+}
+
+.user--overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.user--card:hover .user--overlay {
+    height: 100%;
+}
+
+.user--text {
+    color: var(--color-white);
+    font-size: 17px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.user--card button {
+    font-size: 17px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+}
+
+@media screen and (max-width: 1150px) {
+    .dashboardAdminHeader {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .dash--header_links {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .dash--header_search input {
+        width: 300px;
+    }
+}

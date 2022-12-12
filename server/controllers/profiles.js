@@ -32,7 +32,7 @@ const createProfile = async (req, res) => {
       specialty : req.user.specialty,
       name : req.user.firstName + " " + req.user.lastName
     }).populate("lawyerID", "-password");
-    await User.updateOne({_id : req.user._id},{isHasProfile : true})
+    await User.updateOne({_id : req.user._id},{isHasProfile : true,profileID : newProfile._id})
     await newProfile.save();
     res.send(newProfile);
   } catch (error) {

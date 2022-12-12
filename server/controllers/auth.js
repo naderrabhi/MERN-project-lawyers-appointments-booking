@@ -5,13 +5,17 @@ const sendEmail = require('../utils/sendEmail');
 const sendToken = require('../utils/sendToken');
 
 const registerUserAsLawyer = async (req, res) => {
-  const { email, password, passwordConfirm, role } = req.body;
+  const { email, password,phone, passwordConfirm, role } = req.body;
   try {
     
     const existUser = await User.findOne({ email: email });
+    const existUserPhone = await User.findOne({ phone: phone });
 
     if (existUser)
       return res.status(400).send({ msg: "Avocat déjà existe" });
+
+    if (existUserPhone)
+      return res.status(400).send({ msg: "téléphone déjà existe" });
 
     if (role && role == "admin")
       return res.status(400).send({ msg: "vous ne pouvez pas vous inscrire en tant qu'administrateur" });
@@ -35,12 +39,17 @@ const registerUserAsLawyer = async (req, res) => {
 };
 
 const registerUserAsClient = async (req, res) => {
-  const { email, password, passwordConfirm, role } = req.body;
+  const { email, password,phone, passwordConfirm, role } = req.body;
   try {
+
     const existUser = await User.findOne({ email: email });
+    const existUserPhone = await User.findOne({ phone: phone });
 
     if (existUser)
       return res.status(400).send({ msg: "Client déjà exists" });
+
+    if (existUserPhone)
+      return res.status(400).send({ msg: "téléphone déjà existe" });
     if (role && role == "admin")
       return res.status(400).send({ msg: "vous ne pouvez pas vous inscrire en tant qu'administrateur" });
     if (password !== passwordConfirm)

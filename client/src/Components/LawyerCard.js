@@ -12,7 +12,7 @@ const LawyerCard = ({profile}) => {
                 <p>{profile.specialty}</p>
             </div>
         </div>
-    </div>
+      </div>
     </Link>
   )
 }

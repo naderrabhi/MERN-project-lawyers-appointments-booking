@@ -5,10 +5,12 @@ import ProfileClientAppoinment from '../../Components/ProfileClientAppoinment'
 import {getAllAppointment} from '../../JS/actions/appointment'
 
 import './profileclient.css'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const ProfileClient = () => {
   const User = useSelector((state) => state.auth.User)
   const Appointments = useSelector((state) => state.appointment.Appointments);
+  const Loading = useSelector((state) => state.appointment.loading);
 
   const dispatch = useDispatch();
   
@@ -20,7 +22,7 @@ const ProfileClient = () => {
   return (
     <div className='profileClient--page section__padding'>
       <ProfileClientInfo User={User} />
-      {Appointments.map(appointment => <ProfileClientAppoinment key={appointment._id} appointment={appointment} />)}
+      {Loading ? <LoadingSpinner /> : Appointments.map(appointment => <ProfileClientAppoinment key={appointment._id} appointment={appointment} />)}
     </div>
   )
 }

@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
+  profileID: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "profile",
+  },
   firstName: {
     type: String,
     required: true,
@@ -13,6 +17,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
+  },
+  phone : {
+    type : String,
+    required : true,
   },
   password: {
     type: String,

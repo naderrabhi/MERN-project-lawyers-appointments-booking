@@ -18,6 +18,7 @@ const RegisterAsClient = () => {
           passwordConfirm: data.get("passwordConfirm"),
           firstName: data.get("firstName"),
           lastName: data.get("lastName"),
+          phone: data.get("phone"),
         },
         navigate
       )
@@ -40,6 +41,10 @@ const RegisterAsClient = () => {
         <div className="register--page_client-email">
           <label htmlFor="email">E-mail</label>
           <input id="email" name="email" placeholder="E-mail" type="email" className="input--custom" />
+        </div>
+        <div className="register--page_client-email">
+          <label htmlFor="phone">Téléphone</label>
+          <input id="phone" name="phone" placeholder="Téléphone" type="number" className="input--custom" />
         </div>
         <div className="register--page_client-password">
           <label htmlFor="password">Mot de passe</label>

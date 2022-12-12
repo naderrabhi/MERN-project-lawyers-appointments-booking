@@ -7,7 +7,7 @@ const getAllUsers = async (req, res) => {
   const name = req.query.name;
   try {
     if (role == "all") {
-      const users = await User.find({ firstName: { $regex: name } });
+      const users = await User.find({ firstName: { $regex: name } }).populate("profileID");
       if (!users) return res.status(400).send({ msg: "No Users found" });
       return res.send(users);
     }
