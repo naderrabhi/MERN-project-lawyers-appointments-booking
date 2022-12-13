@@ -1,6 +1,7 @@
 import React, {useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+
 import {postProfile} from '../../JS/actions/profile'
 
 import './createprofile.css'

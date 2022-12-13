@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {data} from '../../assets/dataexplain'
 import WebsiteExplainCard from '../../Components/WebsiteExplainCard'
 

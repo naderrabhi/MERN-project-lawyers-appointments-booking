@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaFacebook,FaTwitterSquare,FaInstagramSquare} from 'react-icons/fa'
+import {FaFacebook,FaLinkedin,FaInstagramSquare} from 'react-icons/fa'
 
 const LawyersDetailsInfo = ({Profile}) => {
   return (
@@ -17,7 +17,7 @@ const LawyersDetailsInfo = ({Profile}) => {
           {Profile.price && <p>Prix de consultation : {Profile.price}</p>}
             <div className="lawyer--social">
               {Profile.facebook && <a href={Profile.facebook}><FaFacebook /></a> }
-              {Profile.linkedin && <a href={Profile.linkedin}><FaTwitterSquare /></a> }
+              {Profile.linkedin && <a href={Profile.linkedin}><FaLinkedin /></a> }
               {Profile.instagram && <a href={Profile.instagram}><FaInstagramSquare /></a> }
             </div>
         </div>

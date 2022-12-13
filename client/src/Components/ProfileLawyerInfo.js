@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaFacebook,FaTwitterSquare,FaInstagramSquare} from 'react-icons/fa'
+import {FaFacebook,FaLinkedin,FaInstagramSquare} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const ProfileLawyerInfo = ({Profile}) => {
@@ -21,7 +21,7 @@ const ProfileLawyerInfo = ({Profile}) => {
           {Profile.price && <p>Prix de consultation : {Profile.price}</p>}
             <div className="lawyer--social">
               {Profile.facebook ? <a href={Profile.facebook}><FaFacebook /></a> : <p className='social--p'>FACEBOOK n'a pas été ajouté</p>}
-              {Profile.linkedin ? <a href={Profile.linkedin}><FaTwitterSquare /></a> : <p className='social--p'>LINKEDIN n'a pas été ajouté</p>}
+              {Profile.linkedin ? <a href={Profile.linkedin}><FaLinkedin /></a> : <p className='social--p'>LINKEDIN n'a pas été ajouté</p>}
               {Profile.instagram ? <a href={Profile.instagram}><FaInstagramSquare /></a> : <p className='social--p'>INSTAGRAM n'a pas été ajouté</p>}
             </div>
         </div>

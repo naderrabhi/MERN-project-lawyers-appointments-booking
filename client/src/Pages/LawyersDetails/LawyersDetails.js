@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+
 import LawyersDetailsBooking from '../../Components/LawyersDetailsBooking'
 import LawyersDetailsInfo from '../../Components/LawyersDetailsInfo'
-import { getOneProfile } from '../../JS/actions/profile'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+
+import { getOneProfile } from '../../JS/actions/profile'
 
 import './lawyersdetails.css'
 

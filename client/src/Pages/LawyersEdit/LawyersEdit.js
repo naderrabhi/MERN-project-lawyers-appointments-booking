@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+
 import EditLawyerForm from '../../Components/EditLawyerForm'
-import { getOneProfile } from '../../JS/actions/profile'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+
+import { getOneProfile } from '../../JS/actions/profile'
 
 import './lawyersedit.css'
 

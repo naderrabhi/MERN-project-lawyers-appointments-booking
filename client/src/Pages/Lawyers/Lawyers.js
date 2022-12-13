@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import LawyerCard from '../../Components/LawyerCard'
-import { getAllProfiles } from '../../JS/actions/profile'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 import Search from '../Search/Search'
+
+import { getAllProfiles } from '../../JS/actions/profile'
 
 import './lawyers.css'
 

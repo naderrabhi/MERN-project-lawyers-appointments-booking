@@ -13,6 +13,8 @@ import Lawyers from './Pages/Lawyers/Lawyers';
 import Login from './Pages/Login/Login';
 import Home from './Pages/Home/Home';
 
+import Alerts from './Components/Alerts/Alerts'
+
 import PrivateAdmin from './Private/PrivateAdmin';
 import Private from './Private/Private';
 
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <Alerts />
       <Routes>
         <Route path='/' element={<Home setSerchInput={setSerchInput} />} />
         <Route path='/connecter' element={<Login />} />

@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import ProfileClientInfo from '../../Components/ProfileClientInfo'
 import ProfileClientAppoinment from '../../Components/ProfileClientAppoinment'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+
 import {getAllAppointment} from '../../JS/actions/appointment'
 
 import './profileclient.css'
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const ProfileClient = () => {
   const User = useSelector((state) => state.auth.User)

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/naderrabhi/avocat-consultation#readme",
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "react-bootstrap": "^2.7.0"
   }
 }

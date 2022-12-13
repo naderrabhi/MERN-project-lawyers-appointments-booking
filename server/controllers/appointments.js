@@ -1,8 +1,7 @@
 const Appointment = require("../models/appointments");
 
 const createAppointment = async (req, res) => {
-  const avocatID = req.params.avocatID;
-  const clientID = req.user._id;
+
   try {
     const existAppointment = await Appointment.findOne({
       clientID: req.user._id
@@ -15,8 +14,9 @@ const createAppointment = async (req, res) => {
         });
     const newAppointment = new Appointment({
       ...req.body,
-      clientID: clientID,
-      lawyerID: avocatID,
+      clientID: req.user._id,
+      lawyerID: req.params.avocatID,
+      phone: req.user.phone
     });
     await newAppointment.save();
     res.send({ msg: "Rendez-vous pris avec succès", newAppointment });

@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
+
 import ProfileLawyerAppointment from '../../Components/ProfileLawyerAppointment'
 import ProfileLawyerInfo from '../../Components/ProfileLawyerInfo'
-import {getMyProfile} from '../../JS/actions/profile'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+
 import {getAllAppointment} from '../../JS/actions/appointment'
+import {getMyProfile} from '../../JS/actions/profile'
 
 import './profilelawyer.css'
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const ProfileLawyer = () => {
   const Profile = useSelector((state) => state.profile.Profile);

@@ -1,7 +1,9 @@
 import React from 'react'
 import {FaSearch} from 'react-icons/fa'
+import {useNavigate } from "react-router-dom";
 
 const DashboardAdminHeader = ({setName,name,handleSubmit,setRole}) => {
+  const navigate = useNavigate()
   return (
     <div className='dashboardAdminHeader'>
         <form onSubmit={handleSubmit} className="dash--header_search">
@@ -12,6 +14,7 @@ const DashboardAdminHeader = ({setName,name,handleSubmit,setRole}) => {
             <button onClick={() => setRole("all")} className='btn--costum'>Tout</button>
             <button onClick={() => setRole("lawyer")} className='btn--costum'>Avocats</button>
             <button onClick={() => setRole("client")} className='btn--costum'>Clients</button>
+            <button onClick={() => navigate("/")} className='btn--costum'>Site-web</button>
         </ul>
     </div>
   )

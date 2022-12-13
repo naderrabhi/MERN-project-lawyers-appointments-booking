@@ -1,6 +1,7 @@
 import React from 'react'
-import {data} from '../../assets/datafooter'
+
 import FooterAddress from '../../Components/FooterAddress'
+import {data} from '../../assets/datafooter'
 
 import './footer.css'
 
