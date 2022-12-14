@@ -9,6 +9,7 @@ import {getAllAppointment} from '../../JS/actions/appointment'
 import {getMyProfile} from '../../JS/actions/profile'
 
 import './profilelawyer.css'
+import Navbar from '../Navbar/Navbar';
 
 const ProfileLawyer = () => {
   const Profile = useSelector((state) => state.profile.Profile);
@@ -31,6 +32,7 @@ const ProfileLawyer = () => {
   return (
     <div className='profileLawyer--page section__padding'>
       {Loading ? <LoadingSpinner /> : <>
+      <Navbar />
       <ProfileLawyerInfo Profile={Profile} />
       <ProfileLawyerAppointment LoadingAppointments={LoadingAppointments} Appointments={Appointments} />
       </>}

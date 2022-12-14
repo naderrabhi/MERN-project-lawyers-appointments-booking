@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import LawyersDetailsBooking from '../../Components/LawyersDetailsBooking'
 import LawyersDetailsInfo from '../../Components/LawyersDetailsInfo'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+import Navbar from '../Navbar/Navbar'
 
 import { getOneProfile } from '../../JS/actions/profile'
 
@@ -24,6 +25,7 @@ const LawyersDetails = () => {
   return (
     <div className='lawyerDetails--page section__padding'>
         {Loading ? <LoadingSpinner /> : <>
+        <Navbar />
         <LawyersDetailsInfo Profile={Profile} />
         <LawyersDetailsBooking avocatID={avocatID} Profile={Profile}/>
         </>}

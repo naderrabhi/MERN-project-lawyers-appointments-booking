@@ -8,6 +8,7 @@ import Search from '../Search/Search'
 import { getAllProfiles } from '../../JS/actions/profile'
 
 import './lawyers.css'
+import Navbar from '../Navbar/Navbar'
 
 const Lawyers = ({serchInput,setSerchInput}) => {
   const Profiles = useSelector((state) => state.profile.Profiles);
@@ -21,6 +22,7 @@ const Lawyers = ({serchInput,setSerchInput}) => {
   
   return (
     <div className='lawyers--page section__padding'>
+        <Navbar />
         <Search setSerchInput={setSerchInput} />
         <div className="lawyers--page_lists">
           {Loading ? <LoadingSpinner /> : Profiles && Profiles.map(profile => <LawyerCard key={profile._id} profile={profile} />)}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { deleteAppointmentByAdmin,deletePostByAdmin, deleteUser, getAllUser } from "../JS/actions/admin";
+import { deleteAppointmentByAdmin,deletePostByAdmin, deleteUser } from "../JS/actions/admin";
 import { deleteProfile } from "../JS/actions/profile";
 
 const DashboardAdminCard = ({role,name,user}) => {
@@ -22,7 +22,6 @@ const DashboardAdminCard = ({role,name,user}) => {
                     dispatch(deleteProfile(user._id));
                     dispatch(deleteAppointmentByAdmin(user.role === 'lawyer' && user._id))
                     dispatch(deletePostByAdmin(user.role === 'lawyer' && user._id))
-                    dispatch(getAllUser(role, name));
                   }} className='btn--costum'>supprimer</button>
                 </div>}
             </div>

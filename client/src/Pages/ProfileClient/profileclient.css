@@ -2,10 +2,10 @@
     min-height: 100vh;
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0rem;
+    gap: 2rem;
     font-family: var(--font-base);
 }
 
@@ -19,6 +19,14 @@
     bottom: 0px;
     left: 0px;
     opacity: 0.4;
+}
+
+.profileClient--page_body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .profileClientInfo,
@@ -80,4 +88,16 @@
     justify-content: center;
     gap: 1.5rem;
     color: var(--color-black);
+}
+
+@media screen and (max-width: 1150px) {
+    .profileClient--page_body {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .profileClientAppoinment,
+    .profileClientInfo {
+        width: 100%;
+    }
 }

@@ -8,6 +8,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 import {getAllAppointment} from '../../JS/actions/appointment'
 
 import './profileclient.css'
+import Navbar from '../Navbar/Navbar'
 
 const ProfileClient = () => {
   const User = useSelector((state) => state.auth.User)
@@ -23,8 +24,11 @@ const ProfileClient = () => {
 
   return (
     <div className='profileClient--page section__padding'>
-      <ProfileClientInfo User={User} />
-      {Loading ? <LoadingSpinner /> : Appointments.map(appointment => <ProfileClientAppoinment key={appointment._id} appointment={appointment} />)}
+      <Navbar />
+      <div className="profileClient--page_body">
+        <ProfileClientInfo User={User} />
+        {Loading ? <LoadingSpinner /> : Appointments && Appointments.map(appointment => <ProfileClientAppoinment key={appointment._id} appointment={appointment} />)}
+      </div>
     </div>
   )
 }
