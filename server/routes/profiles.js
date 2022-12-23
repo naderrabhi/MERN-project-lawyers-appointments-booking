@@ -13,8 +13,8 @@ const upload = require("../utils/multer");
 
 router.get("/my_profile", isAuth(), getMyProfile);
 router.put("/", upload("profile").single("fileName"), isAuth(), createProfile);
-router.get("/", isAuth(), getAllProfiles);
-router.get("/:id", isAuth(), getOneProfile);
+router.get("/", getAllProfiles);
+router.get("/:id", getOneProfile);
 router.delete("/:id", isAuth(), deleteProfile);
 
 module.exports = router;

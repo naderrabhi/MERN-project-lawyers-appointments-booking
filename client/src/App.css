@@ -41,6 +41,14 @@
   padding: 0 1rem;
 }
 
+.textarea--custom {
+  height: 100px;
+  width: 360px;
+  border: solid 3px black;
+  border-radius: 30px;
+  padding: 1rem 1rem;
+}
+
 .input--custom:focus {
   outline: solid 1px black;
 }

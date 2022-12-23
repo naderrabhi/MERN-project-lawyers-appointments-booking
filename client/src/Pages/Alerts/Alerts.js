@@ -8,8 +8,8 @@ const Alerts = () => {
 
   return (
     alerts &&
-    alerts.map((alert) => (
-      <div className="alert">
+    alerts.map((alert, index) => (
+      <div key={index} className="alert">
           <h3>{alert.msg}</h3>
       </div>
     ))

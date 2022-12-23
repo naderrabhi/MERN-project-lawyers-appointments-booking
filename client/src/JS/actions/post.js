@@ -12,6 +12,7 @@ import {
 } from "../const/post";
 
 export const addPost = (post) => async (dispatch) => {
+  console.log(post);
   const token = localStorage.getItem("token");
   try {
     const response = await API.post(
@@ -24,6 +25,7 @@ export const addPost = (post) => async (dispatch) => {
       }
     );
     dispatch({ type: POST_SUCCESS, payload: response.data });
+    dispatch(getPost(post.lawyerID))
   } catch (error) {
     dispatch({ type: POST_FAIL, payload: error });
     console.log(error);
@@ -35,7 +37,7 @@ export const getPost = (lawyerID) => async (dispatch) => {
   const token = localStorage.getItem("token");
   try {
     const response = await API.get(
-      `post/?lawyerID=${lawyerID}`,
+      `post/${lawyerID}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

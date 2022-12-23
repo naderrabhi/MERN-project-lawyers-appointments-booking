@@ -6,19 +6,19 @@ const updateUser = async (req, res) => {
     if (role && role == "admin")
       return res
         .status(400)
-        .send({ msg: "you can not change your role as admin" });
+        .send({ msg: "vous ne pouvez pas changer votre rôle en tant qu'administrateur" });
     const checkEmail = await User.findOne({ email: email });
     if (checkEmail)
-      return res.status(400).send({ msg: "try another email address" });
+      return res.status(400).send({ msg: "essayez une autre adresse e-mail" });
     const updatedUser = await User.updateOne(
       { _id: req.user._id },
       { ...req.body }
     );
     if (updatedUser.modifiedCount) {
       const userAfterUpdate = await User.findOne({ _id: req.user._id });
-      return res.send({ msg: "user updated successfully", userAfterUpdate });
+      return res.send({ msg: "utilisateur éditer avec succès", userAfterUpdate });
     } else {
-      return res.status(400).send({ msg: "user already updated" });
+      return res.status(400).send({ msg: "utilisateur déjà éditer" });
     }
   } catch (error) {
     res.status(400).send(error);
@@ -39,7 +39,7 @@ const getUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     await User.deleteOne({ _id: req.user._id });
-    res.send({ msg: "deleted successfully" });
+    res.send({ msg: "Supprimé avec succès" });
   } catch (error) {
     res.status(400).send(error);
     console.log(error);

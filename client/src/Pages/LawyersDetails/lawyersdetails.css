@@ -132,6 +132,87 @@
     padding-top: 0.5rem !important;
 }
 
+.lawyerDetailsComment {
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    font-family: var(--font-base);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.lawyerDetailsComment h1 {
+    font-size: 2.5rem;
+}
+
+.lawyerDetailsComment textarea {
+    width: 100% !important;
+}
+
+.lawyerDetailsComment button {
+    font-size: 17px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+}
+
+.lawyerDetailsCommentList {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-orange);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.lawyerDetailsCommentList--comment {
+    padding: 2rem 4rem;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.lawyerDetailsCommentList--nameDate {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lawyerDetailsCommentList--nameDate h4 {
+    font-size: 1.2rem;
+}
+
+.lawyerDetailsCommentList--comment p {
+    font-size: 1.2rem;
+}
+
+.lawyerDetailsCommentList--btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lawyerDetailsCommentList--btn button {
+    font-size: 17px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+}
+
+.lawyerDetailsCommentList--comment textarea {
+    width: 100% !important;
+}
+
 @media screen and (max-width:1150px) {
     .lawyerDetailsInfo,
     .lawyersDetailsBooking {

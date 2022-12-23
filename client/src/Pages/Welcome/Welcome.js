@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import WelcomeContent from '../../Components/Welcome/WelcomeContent'
-import WelcomeHeader from '../../Components/Welcome/WelcomeHeader'
+import WelcomeContent from '../../Components/WelcomeContent'
+import WelcomeHeader from '../../Components/WelcomeHeader'
 
 import './welcome.css'
 

@@ -10,10 +10,9 @@ import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import LawyersEdit from './Pages/LawyersEdit/LawyersEdit';
 import Register from './Pages/Register/Register';
 import Lawyers from './Pages/Lawyers/Lawyers';
+import Alerts from './Pages/Alerts/Alerts';
 import Login from './Pages/Login/Login';
 import Home from './Pages/Home/Home';
-
-import Alerts from './Components/Alerts/Alerts'
 
 import PrivateAdmin from './Private/PrivateAdmin';
 import Private from './Private/Private';

@@ -1,5 +1,5 @@
 import React from "react";
-import Links from "../Links";
+import Links from "./Links";
 import WelcomeHeaderSmallScreen from "./WelcomeHeaderSmallScreen";
 
 const WelcomeHeader = ({toggleMenu,setToggleMenu}) => {

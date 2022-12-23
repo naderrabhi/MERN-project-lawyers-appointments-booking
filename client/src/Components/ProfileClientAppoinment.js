@@ -14,7 +14,7 @@ const ProfileClientAppoinment = ({appointment}) => {
       <ul>
           <li>Sujet : {appointment.subject}</li>
           <li>Message : {appointment.description}</li>
-          <li>Téléphone : phone</li>
+          <li>Téléphone : {appointment.phone}</li>
           <li>E-mail : {appointment.lawyerID.email}</li>
       </ul>
       <button className='btn--costum' onClick={() => dispatch(deleteAppointment(appointment._id))}>supprimer</button>

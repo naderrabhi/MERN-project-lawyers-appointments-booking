@@ -8,7 +8,7 @@ const getAllUsers = async (req, res) => {
   try {
     if (role == "all") {
       const users = await User.find({ firstName: { $regex: name } }).populate("profileID");
-      if (!users) return res.status(400).send({ msg: "No Users found" });
+      if (!users) return res.status(400).send({ msg: "Aucun utilisateur trouvé" });
       return res.send(users);
     }
     const users = await User.find({ role: role, firstName: { $regex: name } });
@@ -23,7 +23,7 @@ const getOneUsers = async (req, res) => {
   const id = req.params.id;
   try {
     const client = await User.findById(id);
-    if (!client) return res.status(400).send({ msg: "Not found" });
+    if (!client) return res.status(400).send({ msg: "Aucun utilisateur trouvé" });
     if (client) return res.send(client);
   } catch (error) {
     res.status(400).send(error);
@@ -36,13 +36,13 @@ const deleteUsers = async (req, res) => {
   try {
     const existUser = await User.findOne({ _id: id });
 
-    if (!existUser) return res.status(400).send({ msg: "Not found" });
+    if (!existUser) return res.status(400).send({ msg: "Aucun utilisateur trouvé" });
 
     const deletedClient = await User.deleteOne({ _id: id });
     if (deletedClient.deletedCount) {
-      return res.send({ msg: "User deleted successfully" });
+      return res.send({ msg: "Utilisateur supprimé avec succès" });
     } else {
-      return res.status(400).send({ msg: "User already deleted" });
+      return res.status(400).send({ msg: "Utilisateur déjà supprimé" });
     }
   } catch (error) {
     res.status(400).send({ msg: error.message });
@@ -55,9 +55,9 @@ const deleteAppointmentByAdmin = async (req, res) => {
   try {
     const deletedAppointment = await Appointment.deleteOne({ lawyerID : id });
     if (deletedAppointment.deletedCount) {
-      return res.send({ msg: "appointment deleted successfully" });
+      return res.send({ msg: "Rendez-vous supprimé avec succès" });
     } else {
-      return res.status(400).send({ msg: "appointment already deleted" });
+      return res.status(400).send({ msg: "Rendez-vous déjà supprimé" });
     }
   } catch (error) {
     res.status(400).send({ msg: error.message });
@@ -70,9 +70,9 @@ const deletePostByAdmin = async (req, res) => {
   try {
     const deletedPost = await Post.deleteOne({ lawyerID : id });
     if (deletedPost.deletedCount) {
-      return res.send({ msg: "post deleted successfully" });
+      return res.send({ msg: "Commentaire supprimé avec succès" });
     } else {
-      return res.status(400).send({ msg: "post already deleted" });
+      return res.status(400).send({ msg: "Commentaire déjà supprimé" });
     }
   } catch (error) {
     res.status(400).send({ msg: error.message });

@@ -7,8 +7,8 @@ import Search from '../Search/Search'
 
 import { getAllProfiles } from '../../JS/actions/profile'
 
-import './lawyers.css'
 import Navbar from '../Navbar/Navbar'
+import './lawyers.css'
 
 const Lawyers = ({serchInput,setSerchInput}) => {
   const Profiles = useSelector((state) => state.profile.Profiles);

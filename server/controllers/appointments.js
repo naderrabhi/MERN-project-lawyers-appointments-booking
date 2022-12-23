@@ -1,7 +1,6 @@
 const Appointment = require("../models/appointments");
 
 const createAppointment = async (req, res) => {
-
   try {
     const existAppointment = await Appointment.findOne({
       clientID: req.user._id
@@ -32,7 +31,7 @@ const getOneAppointment = async (req, res) => {
     const appointment = await Appointment.findOne({ _id: id })
       .populate("clientID", "-password")
       .populate("lawyerID", "-password");
-    if (!appointment) return res.status(400).send({ msg: "not found" });
+    if (!appointment) return res.status(400).send({ msg: "Aucun rendez-vous trouvé" });
     res.send(appointment);
   } catch (error) {
     res.status(400).send({ msg: error.message });
@@ -48,7 +47,7 @@ const getAllAppointment = async (req, res) => {
         lawyerID: req.user._id,
       }).populate("clientID", "-password");
       if (!appointments)
-        return res.status(400).send({ msg: "No appointments found" });
+        return res.status(400).send({ msg: "Aucun rendez-vous trouvé" });
       return res.send(appointments);
     }
     if (role == "client") {
@@ -56,7 +55,7 @@ const getAllAppointment = async (req, res) => {
         clientID: req.user._id,
       }).populate("lawyerID", "-password");
       if (!appointments)
-        return res.status(400).send({ msg: "No appointments found" });
+        return res.status(400).send({ msg: "Aucun rendez-vous trouvé" });
       return res.send(appointments);
     }
   } catch (error) {
@@ -71,7 +70,7 @@ const getAllAppointmentOfOneLawyer = async (req, res) => {
   try {
     const appointments = await Appointment.find({ lawyerID: id, day: {$regex : day} });
     if (!appointments)
-      return res.status(404).send({ msg: "No appointments found" });
+      return res.status(404).send({ msg: "Aucun rendez-vous trouvé" });
     res.send(appointments);
   } catch (error) {
     res.status(400).send({ msg: error.message });
@@ -84,9 +83,9 @@ const deleteAppointment = async (req, res) => {
   try {
     const deletedAppointment = await Appointment.deleteOne({ _id: id });
     if (deletedAppointment.deletedCount) {
-      return res.send({ msg: "appointment deleted successfully" });
+      return res.send({ msg: "rendez-vous supprimé avec succès" });
     } else {
-      return res.status(400).send({ msg: "appointment already deleted" });
+      return res.status(400).send({ msg: "rendez-vous déjà supprimé" });
     }
   } catch (error) {
     res.status(400).send({ msg: error.message });

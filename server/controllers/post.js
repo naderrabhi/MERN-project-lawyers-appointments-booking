@@ -9,7 +9,7 @@ const createPost = async (req, res) => {
       comment: req.body.comment,
     });
     await newPost.save();
-    res.send({ msg: "Post saved successfully", newPost });
+    res.send({ msg: "Commentaire enregistré avec succès", newPost });
   } catch (error) {
     res.status(400).send({ msg: error.message });
     console.log(error);
@@ -18,7 +18,7 @@ const createPost = async (req, res) => {
 
 const getPost = async (req, res) => {
   try {
-    const posts = await Post.find({ lawyerID: req.query.lawyerID });
+    const posts = await Post.find({ lawyerID : req.params.id });
     res.send(posts);
   } catch (error) {
     res.status(400).send({ msg: error.message });
@@ -31,9 +31,9 @@ const deletePost = async (req, res) => {
   try {
     const deletedPost = await Post.deleteOne({ _id: id });
     if (deletedPost.deletedCount) {
-      return res.send({ msg: "Post deleted successfully" });
+      return res.send({ msg: "Commentaire supprimé avec succès" });
     } else {
-      return res.status(400).send({ msg: "Profile already deleted" });
+      return res.status(400).send({ msg: "Commentaire déjà supprimé" });
     }
   } catch (error) {
     res.status(400).send({ msg: error.message });
@@ -48,7 +48,7 @@ const editPost = async (req, res) => {
       { ...req.body,comment : req.body.newPost }
     );
     const postAfterEdit = await Post.findById(req.params.id)
-    res.send({ msg: "post updated successfully", postAfterEdit });
+    res.send({ msg: "Commentaire éditer avec succès", postAfterEdit });
   } catch (error) {}
 };
 module.exports = { createPost, getPost, deletePost, editPost };

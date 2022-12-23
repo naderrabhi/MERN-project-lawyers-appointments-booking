@@ -10,6 +10,7 @@ const LawyerCard = ({profile}) => {
             <div className="text">
                 <p>{profile.name}</p>
                 <p>{profile.specialty}</p>
+                <p>{profile.address}</p>
             </div>
         </div>
       </div>

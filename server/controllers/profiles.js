@@ -47,7 +47,7 @@ const getMyProfile = async (req, res) => {
       lawyerID: { _id: req.user._id },
     }).populate("lawyerID", "-password");
     if (!profile)
-      return res.status(400).send({ msg: "you can not access this profile" });
+      return res.status(400).send({ msg: "vous ne pouvez pas accéder à ce profil" });
     res.send(profile);
   } catch (error) {
     res.status(400).send({ msg: error.message });
@@ -74,6 +74,9 @@ const getAllProfiles = async (req, res) => {
         return res.send(profilesSpecialty);
     }else if (profilesAddress.length > 0) {
         return res.send(profilesAddress);
+    }else {
+      const profiles = await Profile.find({}).populate("lawyerID", "-password");
+      return res.send(profiles);
     }
 
   } catch (error) {
@@ -100,17 +103,15 @@ const deleteProfile = async (req, res) => {
   try {
     const deletedProfile = await Profile.deleteOne({ lawyerID: id });
     if (deletedProfile.deletedCount) {
-      return res.send({ msg: "Profile deleted successfully" });
+      return res.send({ msg: "Profil supprimé avec succès" });
     } else {
-      return res.status(400).send({ msg: "Profile already deleted" });
+      return res.status(400).send({ msg: "Profil déjà supprimé" });
     }
   } catch (error) {
     res.status(400).send({ msg: error.message });
     console.log(error);
   }
 };
-
-
 
 module.exports = {
   getMyProfile,

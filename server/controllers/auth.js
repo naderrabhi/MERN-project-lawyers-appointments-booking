@@ -82,7 +82,7 @@ const loginUser = async (req, res) => {
 
     const isMatched = await bcrypt.compare(password, existUser.password);
     if (!isMatched) {
-      return res.status(400).send({ msg: "bad credentials" });
+      return res.status(400).send({ msg: "Mauvaises mot de passe ou email" });
     }
     const payload = { id: existUser._id };
     const token = await jwt.sign(payload, process.env.privateKey);

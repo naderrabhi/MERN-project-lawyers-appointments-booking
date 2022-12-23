@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaWindowClose } from "react-icons/fa";
-import LinksSmallScreen from '../LinksSmallScreen';
+import LinksSmallScreen from './LinksSmallScreen';
 
 const WelcomeHeaderOvarlay = ({setToggleMenu}) => {
   return (

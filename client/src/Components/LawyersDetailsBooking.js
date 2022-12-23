@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {createAppointment} from "../JS/actions/appointment"
 
 const LawyersDetailsBooking = ({avocatID, Profile}) => {
@@ -8,13 +9,16 @@ const LawyersDetailsBooking = ({avocatID, Profile}) => {
     description: "",
     date: "",
   });
-  console.log(booking.date)
+  const navigate = useNavigate()
   const dispatch = useDispatch();
 
-  const handleSave = (event) => {
-    event.preventDefault();
+  const handleSave = () => {
+    if (localStorage.getItem("token")) {
     dispatch(createAppointment(avocatID, booking));
     setBooking({subject : "", description: "", date:""})
+    }else {
+      navigate("/connecter")
+    }
   };
   return (
     <div className='lawyersDetailsBooking'>
@@ -24,7 +28,7 @@ const LawyersDetailsBooking = ({avocatID, Profile}) => {
         <p>Samedi et Dimanche : {Profile.sat_sun}</p>
       </div>
       <div className="lawyersDetailsBooking--book">
-        <form onSubmit={handleSave} className='lawyersDetailsBooking--book_form'>
+        <div className='lawyersDetailsBooking--book_form'>
           <div className="lawyersDetailsBooking--book_date">
             <label htmlFor="date">Date</label>
             <input value={booking.date} onChange={(e) => setBooking({ ...booking, date: e.target.value })} id="date" name="date" placeholder="Date" type="date" className="input--custom" />
@@ -38,11 +42,11 @@ const LawyersDetailsBooking = ({avocatID, Profile}) => {
             <textarea value={booking.description} onChange={(e) => setBooking({ ...booking, description: e.target.value })} cols="30" rows="10" id="message" name="message" placeholder="Message" type="text" className="input--custom" />
           </div>
           <div className="lawyersDetailsBooking--book_btn">
-            <button className="btn--costum btn--costum_hover">
+            <button onClick={()=> handleSave()} className="btn--costum btn--costum_hover">
                 réservez-vous
             </button>
         </div>
-        </form>
+        </div>
       </div>
     </div>
   )
