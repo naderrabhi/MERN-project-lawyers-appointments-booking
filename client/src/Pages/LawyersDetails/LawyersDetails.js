@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import LawyerDetailsCommentList from '../../Components/LawyerDetailsCommentList'
+import ProfileLawyerCoverImage from '../../Components/ProfileLawyerCoverImage'
 import LawyersDetailsBooking from '../../Components/LawyersDetailsBooking'
+import ProfileLawyerContent from '../../Components/ProfileLawyerContent'
 import LawyerDetailsComment from '../../Components/LawyerDetailsComment'
-import LawyersDetailsInfo from '../../Components/LawyersDetailsInfo'
+import ProfileLawyerInfo from '../../Components/ProfileLawyerInfo'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+
 import Navbar from '../Navbar/Navbar'
 
 import { getOneProfile } from '../../JS/actions/profile'
@@ -19,6 +22,7 @@ const LawyersDetails = () => {
   const [comment, setComment] = useState("");
   const [commentEdit, setCommentEdit] = useState("");
   const [toggleEdit, setToggleEdit] = useState(false)
+  const [postID, setPostID] = useState("")
   
   const User = useSelector((state) => state.auth.User);
   const Posts = useSelector((state) => state.post.Posts);
@@ -38,6 +42,7 @@ const LawyersDetails = () => {
   }, [comment]);
 
   const handleEdit = (postID) => {
+    setPostID(postID)
     if (toggleEdit) {dispatch(editPost(postID,commentEdit,avocatID))}
     setToggleEdit(!toggleEdit)
     setComment("")
@@ -47,10 +52,10 @@ const LawyersDetails = () => {
     <div className='lawyerDetails--page section__padding'>
         {Loading ? <LoadingSpinner /> : <>
         <Navbar />
-        <LawyersDetailsInfo Profile={Profile} />
-        <LawyersDetailsBooking avocatID={avocatID} Profile={Profile} User={User}/>
+        <ProfileLawyerCoverImage />
+        <ProfileLawyerContent ><><ProfileLawyerInfo Profile={Profile} /><LawyersDetailsBooking avocatID={avocatID}/></></ProfileLawyerContent>
         {localStorage.getItem("token") && <><LawyerDetailsComment comment={comment} setComment={setComment} avocatID={avocatID} User={User} />
-        <LawyerDetailsCommentList User={User} avocatID={avocatID} Posts={Posts} toggleEdit={toggleEdit} setCommentEdit={setCommentEdit} handleEdit={handleEdit} /></>}
+        <LawyerDetailsCommentList User={User} avocatID={avocatID} Posts={Posts} toggleEdit={toggleEdit} setCommentEdit={setCommentEdit} handleEdit={handleEdit} postID={postID} /></>}
         </>}
     </div>
   )

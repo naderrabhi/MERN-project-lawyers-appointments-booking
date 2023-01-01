@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 
-import ProfileLawyerAppointment from '../../Components/ProfileLawyerAppointment'
-import ProfileLawyerInfo from '../../Components/ProfileLawyerInfo'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+
+import Navbar from '../Navbar/Navbar';
+
+import ProfileLawyerAppointment from '../../Components/ProfileLawyerAppointment'
+import ProfileLawyerCoverImage from '../../Components/ProfileLawyerCoverImage';
+import ProfileLawyerContent from '../../Components/ProfileLawyerContent';
+import ProfileLawyerInfo from '../../Components/ProfileLawyerInfo';
 
 import {getAllAppointment} from '../../JS/actions/appointment'
 import {getMyProfile} from '../../JS/actions/profile'
 
 import './profilelawyer.css'
-import Navbar from '../Navbar/Navbar';
 
 const ProfileLawyer = () => {
   const Profile = useSelector((state) => state.profile.Profile);
@@ -33,8 +37,8 @@ const ProfileLawyer = () => {
     <div className='profileLawyer--page section__padding'>
       {Loading ? <LoadingSpinner /> : <>
       <Navbar />
-      <ProfileLawyerInfo Profile={Profile} />
-      <ProfileLawyerAppointment LoadingAppointments={LoadingAppointments} Appointments={Appointments} />
+      <ProfileLawyerCoverImage />
+      <ProfileLawyerContent ><><ProfileLawyerInfo Profile={Profile} /><ProfileLawyerAppointment LoadingAppointments={LoadingAppointments} Appointments={Appointments} /></></ProfileLawyerContent>
       </>}
       
     </div>

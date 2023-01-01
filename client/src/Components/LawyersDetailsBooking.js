@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {createAppointment} from "../JS/actions/appointment"
 
-const LawyersDetailsBooking = ({avocatID, Profile}) => {
+const LawyersDetailsBooking = ({avocatID}) => {
   const [booking, setBooking] = useState({
     subject: "",
     description: "",
@@ -22,11 +22,6 @@ const LawyersDetailsBooking = ({avocatID, Profile}) => {
   };
   return (
     <div className='lawyersDetailsBooking'>
-      <div className="lawyersDetailsBooking--text">
-        <p>Faites votre réservation</p>
-        <p>Lundi au Vendredi : {Profile.mon_fri}</p>
-        <p>Samedi et Dimanche : {Profile.sat_sun}</p>
-      </div>
       <div className="lawyersDetailsBooking--book">
         <div className='lawyersDetailsBooking--book_form'>
           <div className="lawyersDetailsBooking--book_date">

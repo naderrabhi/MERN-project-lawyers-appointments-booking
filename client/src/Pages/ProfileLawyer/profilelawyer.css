@@ -23,7 +23,7 @@
 
 .profileLawyerInfo {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     opacity: 1;
     position: relative;
@@ -33,7 +33,7 @@
 
 .profileLawyerInfo--img {
     background-color: var(--color-white);
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,23 +45,31 @@
 
 .profileLawyerInfo--img img {
     width: 250px;
+    height: 250px;
+    border-radius: 50%;
 }
 
 .profileLawyerInfo--details {
-    background-color: var(--color-orange);
-    width: 50%;
+    background-color: var(--color-white);
+    width: 100%;
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 1.5rem;
-    color: var(--color-white);
+    gap: 0.8rem;
+    color: var(--color-orange);
 }
 
 .profileLawyerInfo--details p {
     font-size: 1.8rem;
     letter-spacing: 0.1rem;
+}
+
+.profileLawyerInfo--details_icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .profileLawyerInfo--social {
@@ -72,21 +80,24 @@
 }
 
 .profileLawyerAppointment {
-    background-color: white;
     width: 100%;
-    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .profileLawyerAppointment--app {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    background-color: var(--color-white);
+    padding: 2rem 1rem;
 }
 
 .profileLawyerAppointment--app_confirm {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.3rem;
 }
 
 .profileLawyerAppointment--app p {
@@ -97,7 +108,7 @@
 
 .profileLawyerAppointment--app svg {
     color: green;
-    font-size: 35px;
+    font-size: 55px;
 }
 
 .profileLawyerAppointment--app span {
@@ -126,14 +137,35 @@
     padding: 0 15px;
 }
 
+.profileLawyerCoverImage {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.profileLawyerCoverImage img {
+    width: 100%;
+    height: 100%;
+}
+
+.profileLawyerContent {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+}
+
 @media screen and (max-width: 1150px) {
-    .profileLawyerInfo {
-        flex-direction: column;
-        align-items:center;
-        gap: 2rem;
-    }
+    
     .profileLawyerInfo--img,
     .profileLawyerInfo--details {
+        width: 100%;
+    }
+    .profileLawyerContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2rem;
         width: 100%;
     }
 }

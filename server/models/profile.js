@@ -6,6 +6,7 @@ const profileSchema = new mongoose.Schema({
     ref: "user",
   },
   image: { type: String, required: true},
+  cover: { type: String, required: true},
   address: { type: String, required: true},
   bio: { type: String, required: true},
   phone: { type: String, required: true},
